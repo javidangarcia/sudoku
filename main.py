@@ -6,7 +6,7 @@ WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Sudoku")
 
 def main():
-    board = Board(9, 9)
+    board = Board(ROWS, COLS)
     run = True
     while run:
         for event in pygame.event.get():
