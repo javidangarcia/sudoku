@@ -6,7 +6,7 @@ ROWS, COLS = 9, 9
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 GRAY = (128, 128, 128)
-RED = (242, 85, 96)
+RED = (69, 177, 232)
 
 # BOARDS
 board = [

@@ -1,9 +1,9 @@
 import pygame
-from board import Board
-from constants import *
+from sudoku.board import Board
+from sudoku.constants import *
 
 WINDOW = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Sudoku")
+pygame.display.set_caption("Sudoku Solver")
 
 def main():
     board = Board(ROWS, COLS)
@@ -12,6 +12,12 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+        
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                position = pygame.mouse.get_pos()
+                clicked = board.click(position)
+                if clicked:
+                    board.select(clicked[0], clicked[1])
         
         WINDOW.fill(WHITE)
         board.draw_board(WINDOW)
